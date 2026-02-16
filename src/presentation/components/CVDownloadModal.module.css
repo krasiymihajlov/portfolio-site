@@ -1,0 +1,190 @@
+/* CV Download Modal Styles */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s;
+}
+
+.modalContainer {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modalContent {
+  position: relative;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 42rem;
+  width: 100%;
+  padding: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.modalContent.dark {
+  background-color: #1f2937;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #4b5563;
+}
+
+.closeButton.dark:hover {
+  color: #d1d5db;
+}
+
+.closeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.modalTitle.dark {
+  color: white;
+}
+
+.modalDescription {
+  color: #4b5563;
+}
+
+.modalDescription.dark {
+  color: #d1d5db;
+}
+
+.positionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.positionCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.positionCard:hover {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.positionCard.dark {
+  border-color: #374151;
+}
+
+.positionCard.dark:hover {
+  border-color: #60a5fa;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: #dbeafe;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  transition: transform 0.2s;
+}
+
+.positionCard:hover .iconContainer {
+  transform: scale(1.1);
+}
+
+.iconContainer.dark {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.positionInfo {
+  flex: 1;
+}
+
+.positionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.positionTitle.dark {
+  color: white;
+}
+
+.positionDescription {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.positionDescription.dark {
+  color: #9ca3af;
+}
+
+.arrowContainer {
+  flex-shrink: 0;
+}
+
+.arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+
+.positionCard:hover .arrow {
+  color: #3b82f6;
+}
+
+.positionCard.dark:hover .arrow {
+  color: #60a5fa;
+}

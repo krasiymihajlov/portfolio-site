@@ -1,0 +1,119 @@
+/* Contact Page Styles */
+
+/* Social Links Section */
+.socialSection {
+  background-color: #f9fafb;
+  padding: 4rem 0;
+  transition: background-color 0.3s;
+}
+
+.socialSection.dark {
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+@media (min-width: 640px) {
+  .socialSection {
+    padding: 6rem 0;
+  }
+}
+
+.socialContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .socialContainer {
+    padding: 0 2rem;
+  }
+}
+
+.socialTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.socialTitle.dark {
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .socialTitle {
+    font-size: 1.875rem;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.socialLink {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.socialLink.linkedin {
+  background-color: #dbeafe;
+}
+
+.socialLink.linkedin.dark {
+  background-color: rgba(30, 64, 175, 0.3);
+}
+
+.socialLink.linkedin:hover {
+  background-color: #bfdbfe;
+}
+
+.socialLink.linkedin.dark:hover {
+  background-color: rgba(30, 64, 175, 0.5);
+}
+
+.socialLink.github {
+  background-color: #f3f4f6;
+}
+
+.socialLink.github.dark {
+  background-color: #374151;
+}
+
+.socialLink.github:hover {
+  background-color: #e5e7eb;
+}
+
+.socialLink.github.dark:hover {
+  background-color: #4b5563;
+}
+
+.socialIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.socialIcon.linkedin {
+  color: #2563eb;
+}
+
+.socialIcon.linkedin.dark {
+  color: #60a5fa;
+}
+
+.socialIcon.github {
+  color: #374151;
+}
+
+.socialIcon.github.dark {
+  color: #d1d5db;
+}

@@ -1,0 +1,77 @@
+/* Pricing Page Styles */
+
+/* Base Packages Section */
+.section {
+  padding: 4rem 0;
+  transition: background-color 0.3s;
+}
+
+.section.light {
+  background-color: white;
+}
+
+.section.light.dark {
+  background-color: #111827;
+}
+
+.section.gray {
+  background-color: #f9fafb;
+}
+
+.section.gray.dark {
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 8rem 0;
+  }
+}
+
+.sectionContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .sectionContainer {
+    padding: 0 2rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.sectionTitle.dark {
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.sectionText {
+  font-size: 1.125rem;
+  color: #4b5563;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.sectionText.dark {
+  color: #d1d5db;
+}

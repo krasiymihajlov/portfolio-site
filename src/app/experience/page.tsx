@@ -37,7 +37,7 @@ export default function ExperiencePage() {
       setIsGenerating(true);
 
       // Pre-fetch profile image as base64 so react-pdf doesn't make a network request during rendering
-      let profileImageData: string = PROFILE_IMAGE;
+      let profileImageData: string = CV_PROFILE_IMAGE;
       try {
         const imgResponse = await fetch(CV_PROFILE_IMAGE);
         const imgBlob = await imgResponse.blob();

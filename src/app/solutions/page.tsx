@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { TwoColumnSection } from '@/presentation/components/sections';
 
 export default function SolutionsPage() {
@@ -6,27 +7,53 @@ export default function SolutionsPage() {
       {/* Section 1: Building end-to-end solutions */}
       <TwoColumnSection
         imagePosition="right"
-        heading="Building end-to-end solutions"
-        description="Throughout my career, I've mainly focused on developing end to end solutions — from designing the backend architecture and APIs to implementing responsive frontend interfaces. My most recent project was a full stack web platform for online courses, built with .NET Core and React, using SQL/MySQL as the database. It included features like video streaming, payment integrations, article management, user authentication, and email verification workflows."
+        imageSrc="/images/general/end-to-end.jpg"
+        imageAlt="End-to-end решения"
+        heading="Изграждане на end-to-end решения"
+        description={
+          <>
+            <p className="mb-4">
+             През цялата си кариера съм се фокусирал основно върху разработването на цялостни решения – от
+             проектиране на backend архитектурата и API до внедряване на адаптивни frontend интерфейси.
+             Най-скорошният ми проект беше full‑stack уеб платформа за онлайн курсове, изградена с .NET Core и React,
+             използваща SQL/MySQL като база данни. Тя включваше функции като видео стрийминг, интеграции за плащания,
+             управление на статии, удостоверяване на потребителите и работни процеси за проверка на имейл.
+            </p>
+          </>
+        }
         backgroundColor="white"
       />
 
       {/* Section 2: Автоматизации */}
       <TwoColumnSection
         imagePosition="left"
+        imageSrc="/images/general/automation.jpg"
+        imageAlt="Автоматизации"
         heading="Автоматизации"
         description={
           <>
             <p className="mb-4">
-              Автоматизацията е просто усилвател на нашият процес. Ако процеса ни е бавен,
-              тромав и неефективен, усилването и забързването, чрез автоматизирането му може
-              да доведе до по бърз негативен ефект. Затова преди да вземем решение дали да
-              автоматизираме даден процес, трябва да сме сигурни, че нашата ефективност в
-              момента е в правилната посока.
+              Автоматизацията на един процес е усилвател на ефективността, която той вече притежава.
+              Ако процесът в момента е бавен, тромав или неефективен, неговото ускоряване чрез автоматизация
+              може да доведе до по‑бърз негативен резултат, вместо до положителен.
+              Затова преди да вземем решение дали да автоматизираме даден процес, е важно да се уверим,
+              че настоящите ни процеси са оптимизирани и добре структурирани.
             </p>
-            <p className="text-gray-500 dark:text-gray-400 italic">
-              Топ 3 оптимизации - coming soon...
+            <p className="mb-4">
+              Чрез принципи и инструменти от Lean Management и Теория на ограниченията мога да ви помогна
+              да изградите ефективна, подредена и устойчива бизнес среда, в която автоматизацията наистина носи стойност.
             </p>
+            <p className="mb-6">
+              Ако не сте сигурни дали вашият бизнес има нужда от допълнителна автоматизация, свържете се с мен.
+              С удоволствие ще организираме среща, на която да обсъдим вашия бизнес, текущите предизвикателства
+              и най‑подходящите решения за вас.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow hover:bg-blue-700 transition-colors"
+            >
+              Свържи се с мен
+            </Link>
           </>
         }
         backgroundColor="gray"

@@ -1,6 +1,6 @@
 /**
- * CV Data - Work Experience, Education, and Skills
- * This file contains all the professional information used for CV generation and display
+ * CV Data - Interfaces, types and fallback data
+ * Live data is loaded from Firebase. This file provides types and static fallbacks.
  */
 
 export interface ExperienceData {
@@ -23,14 +23,26 @@ export interface EducationData {
   degree: string;
   period: string;
   gpa: string | null;
+  logo?: string;
 }
 
-// Work Experience Data
+export interface ProgrammingSkills {
+  languages: string[];
+  backend: string[];
+  frontend: string[];
+  databases: string[];
+  devops: string[];
+  tools: string[];
+  architecture: string[];
+  integrations: string[];
+}
+
+// Fallback Experience Data (EN) - used if Firebase is unavailable
 export const experiencesData: ExperienceData[] = [
   {
     id: '1',
     company: 'Bulgarian Educational Cybernetics',
-    position: 'Creation and maintenance of the website bok.bg',
+    position: 'Creator on website bok.bg',
     location: 'Varna, Bulgaria',
     startDate: '2025-08',
     endDate: null,
@@ -134,7 +146,7 @@ export const experiencesData: ExperienceData[] = [
   },
 ];
 
-// Education Data
+// Fallback Education Data (EN)
 export const educationData: EducationData[] = [
   {
     id: '1',
@@ -142,6 +154,7 @@ export const educationData: EducationData[] = [
     degree: 'In-house courses and personalized training',
     period: '2022-2025',
     gpa: null,
+    logo: '/images/projects/bok-logo.jpg',
   },
   {
     id: '2',
@@ -149,39 +162,36 @@ export const educationData: EducationData[] = [
     degree: 'C# Web Developer',
     period: '2016-2018',
     gpa: '5.88/6.0',
+    logo: '/images/projects/Logo_Software_University_(SoftUni).png',
   },
   {
     id: '3',
     institution: 'Technical University - Varna',
-    degree: 'Master of Engineering',
+    degree: 'Master Electrical Engineer in Renewable Energy Sources',
     period: '2009-2015',
     gpa: '5.00/6.0',
+    logo: '/images/projects/tu-varna-logo.png',
   },
 ];
 
-// Programming Skills
-export const programmingSkills = {
-  mainKnowledge: [
-    'C#, Object Oriented Programming',
-    'ASP.NET',
-    'Transact-SQL, MySQL',
-    'Entity Framework Core',
-    'WPF, ReactJS',
-  ],
-  basicKnowledge: [
-    'JavaScript',
-    'HTML, CSS',
-    'Python',
-  ],
+// Fallback Programming Skills
+export const programmingSkills: ProgrammingSkills = {
+  languages: ['C#', 'JavaScript/TypeScript', 'SQL', 'PHP (basic)', 'Python (basic)', 'Java (basic)'],
+  backend: ['.NET Core', 'ASP.NET', 'ASP.NET Web Forms', 'WPF', 'REST API', 'Entity Framework'],
+  frontend: ['ReactJS', 'HTML5', 'CSS3', 'Tailwind', 'Responsive UI'],
+  databases: ['SQL Server', 'MySQL', 'NoSQL', 'JSON tree'],
+  devops: ['GitHub Actions', 'Vercel', 'Hostinger', 'Superhosting', 'Hetzner'],
+  tools: ['Visual Studio', 'VS Code', 'Claude', 'Git', 'Postman', 'Xampp'],
+  architecture: ['SOLID', 'Clean Architecture', 'Microservices', 'Design Patterns'],
+  integrations: ['Firebase', 'SendGrid', 'Gmail', 'EmailJS'],
 };
 
 // Utility function to format dates
-export const formatDate = (dateString: string | null): string => {
-  if (!dateString) return 'Present';
+export const formatDate = (dateString: string | null, locale: 'en' | 'bg' = 'en'): string => {
+  if (!dateString) return locale === 'bg' ? 'Настояще' : 'Present';
   const [year, month] = dateString.split('-');
-  const months = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-  ];
+  const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const monthsBg = ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
+  const months = locale === 'bg' ? monthsBg : monthsEn;
   return `${months[parseInt(month) - 1]} ${year}`;
 };

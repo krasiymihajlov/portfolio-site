@@ -81,6 +81,59 @@
 
 .buttonContainer {
   margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.localeToggle {
+  display: inline-flex;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  overflow: hidden;
+}
+
+.localeToggle.dark {
+  border-color: #374151;
+}
+
+.localeBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: white;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.localeBtn.dark {
+  background: #1f2937;
+  color: #9ca3af;
+}
+
+.localeBtn.localeActive {
+  background: #2563eb;
+  color: white;
+}
+
+.localeBtn.dark.localeActive {
+  background: #2563eb;
+  color: white;
+}
+
+.loadingState {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+  color: #6b7280;
+}
+
+.loadingState.dark {
+  color: #9ca3af;
 }
 
 .downloadButton {
@@ -584,14 +637,22 @@
 }
 
 .educationIcon {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   background-color: #dbeafe;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
+  overflow: hidden;
+}
+
+.educationLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.4rem;
 }
 
 .educationIcon svg {
@@ -667,37 +728,31 @@
 .skillsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 56rem;
+  gap: 1rem;
+  max-width: 72rem;
   margin: 0 auto;
 }
 
 @media (min-width: 640px) {
   .skillsGrid {
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .skillsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .skillCard {
   background-color: white;
   border-radius: 0.5rem;
-  padding: 1.25rem;
+  padding: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
   transition: all 0.2s;
-}
-
-@media (min-width: 640px) {
-  .skillCard {
-    padding: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  }
 }
 
 .skillCard:hover {

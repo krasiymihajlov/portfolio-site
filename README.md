@@ -189,7 +189,7 @@ npm run lint     # Проверява кода за грешки
 
 **Krasimir Mihaylov**
 
-- Portfolio: [вашият-сайт.com](https://вашият-сайт.com)
+- Portfolio: [Линк]https://portfolio-site-lovat-sigma.vercel.app/home
 - GitHub: https://github.com/krasiymihajlov
 - LinkedIn: [Krasimir Mihaylov](https://www.linkedin.com/in/krasimir-mihailov-301429139/)
 

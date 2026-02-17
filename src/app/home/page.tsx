@@ -4,12 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from '@/presentation/contexts/ThemeContext';
 import { ProjectCard } from '@/presentation/components/sections';
+import { PROFILE_IMAGE } from '@/data/siteConfig';
 import styles from './HomePage.module.css';
 
 // Profile data constants
-const PROFILE_IMAGE_PATH = '/images/profile/krasimir-mihaylov.png';
+const PROFILE_IMAGE_PATH = PROFILE_IMAGE;
 const PROFILE_NAME = 'Красимир Михайлов';
-const PROFILE_IMAGE_SIZE = 80; // Width and height in pixels
+const PROFILE_IMAGE_SIZE = 112; // Width and height in pixels
 
 // Job titles array
 const jobTitles = [
@@ -88,15 +89,26 @@ export default function HomePage() {
             <div className={`${styles.profileCard} ${isDark ? styles.dark : ''}`}>
               {/* Profile Header - Photo + Name */}
               <div className={styles.profileHeader}>
-                <div className={`${styles.profilePhoto} ${isDark ? styles.dark : ''}`}>
-                  <Image
-                    src={PROFILE_IMAGE_PATH}
-                    alt={PROFILE_NAME}
-                    width={PROFILE_IMAGE_SIZE}
-                    height={PROFILE_IMAGE_SIZE}
-                    className={styles.profilePhotoImage}
-                    priority
-                  />
+                <div className={styles.profilePhotoWrapper}>
+                  <div className={`${styles.profilePhoto} ${isDark ? styles.dark : ''}`}>
+                    <Image
+                      src={PROFILE_IMAGE_PATH}
+                      alt={PROFILE_NAME}
+                      width={PROFILE_IMAGE_SIZE}
+                      height={PROFILE_IMAGE_SIZE}
+                      className={styles.profilePhotoImage}
+                      priority
+                    />
+                  </div>
+                  <div className={styles.profilePhotoZoom}>
+                    <Image
+                      src={PROFILE_IMAGE_PATH}
+                      alt={PROFILE_NAME}
+                      width={224}
+                      height={224}
+                      className={styles.profilePhotoZoomImage}
+                    />
+                  </div>
                 </div>
                 <h1 className={`${styles.profileName} ${isDark ? styles.dark : ''}`}>
                   {PROFILE_NAME}

@@ -4,9 +4,11 @@ import {
   ExperienceData,
   EducationData,
   ProgrammingSkills,
+  ProjectData,
   experiencesData,
   educationData,
   programmingSkills,
+  projectsData,
 } from '@/data/cvData';
 
 export type Locale = 'en' | 'bg';
@@ -52,6 +54,21 @@ export class FirebaseCVDataRepository {
       return docSnap.data() as ProgrammingSkills;
     } catch {
       return programmingSkills;
+    }
+  }
+
+  async getProjects(locale: Locale = 'en'): Promise<ProjectData[]> {
+    try {
+      const collectionName = locale === 'bg' ? 'projects_bg' : 'projects_en';
+      const snapshot = await getDocs(collection(db, collectionName));
+
+      if (snapshot.empty) return projectsData;
+
+      const items = snapshot.docs.map((d) => ({ id: d.id, ...d.data() } as ProjectData));
+      items.sort((a, b) => a.order - b.order);
+      return items;
+    } catch {
+      return projectsData;
     }
   }
 }

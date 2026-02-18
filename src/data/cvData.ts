@@ -37,6 +37,59 @@ export interface ProgrammingSkills {
   integrations: string[];
 }
 
+export interface ProjectData {
+  id: string;
+  title: string;
+  description: string;
+  fullDescription: string;
+  tags: string[];
+  technologies: string[];
+  image: string;
+  screenshots: string[];
+  link: string;
+  order: number;
+}
+
+// Fallback Projects Data - used if Firebase is unavailable
+export const projectsData: ProjectData[] = [
+  {
+    id: '1',
+    order: 1,
+    title: 'Българска Образователна Кибернетика',
+    description: 'BOK Academy е цялостна образователна платформа в сферата на предприемачеството, предназначена за управление на онлайн курсове, предоставяне на съдържание и записване на клиенти.',
+    fullDescription: '',
+    tags: ['Web Application'],
+    technologies: ['Node.js 18+', '.NET 8.0 SDK', 'TypeScript', 'MySQL 8.0+', 'Tailwind CSS', 'NGINX'],
+    image: '/images/projects/logo-bok-skok.jpg',
+    screenshots: [],
+    link: 'https://bok.bg/',
+  },
+  {
+    id: '2',
+    order: 2,
+    title: 'Автоматизиран генератор за оферти',
+    description: 'Инструмент за автоматично генериране на персонализирани оферти с динамично съдържание, автоматично изчисляване на цени и експорт в PDF формат.',
+    fullDescription: '',
+    tags: ['Web Application'],
+    technologies: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
+    image: '/images/projects/offer-logo-bok.jpg',
+    screenshots: [],
+    link: '#',
+  },
+  {
+    id: '3',
+    order: 3,
+    title: 'Генератор на график за медицински сестри',
+    description: 'Система за автоматично генериране на работни графици за медицински персонал. Отчита почивки, отпуски, нощни смени и изисквания за покритие на отделенията.',
+    fullDescription: '',
+    tags: ['Web Application'],
+    technologies: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
+    image: '/images/projects/logo-maichin-dom.jpg',
+    screenshots: [],
+    link: '#',
+  },
+];
+
 // Fallback Experience Data (EN) - used if Firebase is unavailable
 export const experiencesData: ExperienceData[] = [
   {

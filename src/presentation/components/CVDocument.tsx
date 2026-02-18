@@ -1,5 +1,5 @@
 import { Document, Page, Text, View, StyleSheet, Link, Image, Svg, Path } from '@react-pdf/renderer';
-import { ProgrammingSkills } from '@/data/cvData';
+import { ProgrammingSkills, ProjectData } from '@/data/cvData';
 
 const PURPLE = '#310063';
 const PURPLE_LIGHT = '#e8d0ff';
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   bgArc4: {
     position: 'absolute',
-    bottom: -160,
+    bottom: 0,
     left: -120,
     width: 380,
     height: 380,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   bgArc5: {
     position: 'absolute',
-    bottom: -60,
+    bottom: 0,
     left: -200,
     width: 300,
     height: 300,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     top: 8,
     left: 0,
     width: 4,
-    height: '100%',
+    height: 825,
     backgroundColor: PURPLE,
   },
 
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: GRAY_MID,
     lineHeight: 1.5,
-    marginBottom: 12,
+    marginBottom: 8,
   },
 
   // ── Experience ────────────────────────────────────────
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
 
   // ── Education ─────────────────────────────────────────
   eduItem: {
-    marginBottom: 8,
+    marginBottom: 5,
     paddingLeft: 6,
     borderLeft: `2 solid ${PURPLE}`,
   },
@@ -339,6 +339,120 @@ const styles = StyleSheet.create({
     marginLeft: 6,
     lineHeight: 1.3,
   },
+
+  // ── Language section ──────────────────────────────────
+  langRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 5,
+    paddingBottom: 5,
+    borderBottom: `1 solid #e5e7eb`,
+  },
+  langRowLast: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  langLeft: {
+    flex: 1,
+  },
+  langName: {
+    fontSize: 10,
+    fontFamily: 'Helvetica-Bold',
+    color: GRAY_DARK,
+    marginBottom: 2,
+  },
+  langLevel: {
+    fontSize: 8,
+    color: GRAY_LIGHT,
+  },
+  langDotFilled: {
+    width: 11,
+    height: 11,
+    borderRadius: 6,
+    backgroundColor: PURPLE,
+    marginRight: 3,
+  },
+  langDotEmpty: {
+    width: 11,
+    height: 11,
+    borderRadius: 6,
+    backgroundColor: '#d1d5db',
+    marginRight: 3,
+  },
+
+  // ── Project section ───────────────────────────────────
+  projItem: {
+    marginBottom: 5,
+    paddingBottom: 4,
+    borderBottom: `1 solid #e5e7eb`,
+  },
+  projItemLast: {
+    marginBottom: 5,
+  },
+  projTitle: {
+    fontSize: 10,
+    fontFamily: 'Helvetica-Bold',
+    color: GRAY_DARK,
+    marginBottom: 3,
+  },
+  projDate: {
+    fontSize: 8,
+    color: GRAY_LIGHT,
+    marginBottom: 2,
+  },
+  projLink: {
+    fontSize: 7.5,
+    color: PURPLE,
+    marginBottom: 3,
+    textDecoration: 'none',
+  },
+  projDesc: {
+    fontSize: 8,
+    color: GRAY_MID,
+    lineHeight: 1.4,
+    marginBottom: 3,
+  },
+
+  // ── Skills page 2 ─────────────────────────────────────
+  skillsRow: {
+    flexDirection: 'row',
+    gap: 10,
+    marginBottom: 6,
+  },
+  skillBox: {
+    flex: 1,
+    borderWidth: 1.5,
+    borderColor: PURPLE,
+    borderStyle: 'solid',
+    borderRadius: 5,
+    padding: '5 8',
+  },
+  skillBoxTitle: {
+    fontSize: 9,
+    fontFamily: 'Helvetica-Bold',
+    color: PURPLE,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: 6,
+  },
+  skillChipsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  skillChip: {
+    fontSize: 7.5,
+    color: PURPLE_DARK,
+    borderWidth: 1,
+    borderColor: PURPLE,
+    borderStyle: 'solid',
+    borderRadius: 3,
+    padding: '2 4',
+    marginRight: 4,
+    marginBottom: 4,
+  },
 });
 
 // ── SVG icon helpers ──────────────────────────────────────
@@ -369,6 +483,12 @@ const LinkedInIcon = () => (
 const GlobeIcon = () => (
   <Svg width="9" height="9" viewBox="0 0 24 24">
     <Path fill={PURPLE} d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+  </Svg>
+);
+
+const LinkIcon = () => (
+  <Svg width="8" height="8" viewBox="0 0 24 24">
+    <Path fill={PURPLE} d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" />
   </Svg>
 );
 
@@ -407,6 +527,7 @@ interface CVDocumentProps {
   experiences: ExperienceData[];
   education: EducationData[];
   skills?: ProgrammingSkills | null;
+  projects?: ProjectData[];
   profileImage?: string;
 }
 
@@ -421,7 +542,7 @@ const skillCategoryLabels: Record<keyof ProgrammingSkills, string> = {
   integrations: 'Integrations',
 };
 
-export function CVDocument({ selectedPosition, experiences, education, skills, profileImage }: CVDocumentProps) {
+export function CVDocument({ selectedPosition, experiences, education, skills, projects = [], profileImage }: CVDocumentProps) {
   const formatDate = (dateString: string | null) => {
     if (!dateString) return 'Present';
     const [year, month] = dateString.split('-');
@@ -440,7 +561,7 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
   const getSummary = () => {
     switch (selectedPosition) {
       case 'software-engineer':
-        return '10+ years of experience in software engineering, specializing in full-stack development with .NET Core, React, and database technologies. Proven track record of building comprehensive web platforms and enterprise solutions.';
+        return 'I combine over 10 years of experience in software/electrical engineering, commerce and business to help people and companies work smarter, faster and more efficiently. Through AI tools, innovative approaches and modern software solutions, I help small businesses, freelancers and organizations build a strong online presence, optimize their processes and turn their ideas into real products that bring value and sales.';
       case 'merchant':
         return 'Experienced sales professional and insurance broker with strong focus on B2B and B2C client relationships. Specialized in helping business owners optimize costs and secure financial solutions through strategic insurance planning.';
       case 'business-consultant':
@@ -452,6 +573,15 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
   const profileImageUrl = profileImage ?? '/images/profile/k.mihaylov-logo.png';
   const mainExperiences = experiences.filter(e => isMain(e.category));
   const otherExperiences = experiences.filter(e => !isMain(e.category));
+
+  const displayedProjects = projects.slice(0, 3);
+
+  const skillKeys = (Object.keys(skillCategoryLabels) as Array<keyof ProgrammingSkills>)
+    .filter(key => skills && skills[key] && (skills[key] as string[]).length > 0);
+  const skillPairs: Array<Array<keyof ProgrammingSkills>> = [];
+  for (let i = 0; i < skillKeys.length; i += 2) {
+    skillPairs.push(skillKeys.slice(i, i + 2));
+  }
 
   return (
     <Document>
@@ -495,7 +625,7 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
                 {/* LinkedIn */}
                 <View style={styles.contactIconRow}>
                   <LinkedInIcon />
-                  <Link src="https://www.linkedin.com/in/krasimir-mihailov-301429139/" style={styles.contactIconLink}>
+                  <Link src="https://www.linkedin.com/in/krasimir-mihaylov-301429139/" style={styles.contactIconLink}>
                     LinkedIn
                   </Link>
                 </View>
@@ -564,10 +694,70 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
               ))}
             </View>
 
-            {/* ── RIGHT: Education + Skills ── */}
+            {/* ── RIGHT: Languages + Projects + Education ── */}
             <View style={styles.rightCol}>
 
-              <SectionTitle>Education</SectionTitle>
+              {/* 1. LANGUAGES */}
+              <SectionTitle>Languages</SectionTitle>
+              <View style={styles.langRow}>
+                <View style={styles.langLeft}>
+                  <Text style={styles.langName}>Bulgarian</Text>
+                  <Text style={styles.langLevel}>Native</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  {[1,2,3,4,5].map(i => (
+                    <View key={i} style={styles.langDotFilled} />
+                  ))}
+                </View>
+              </View>
+              <View style={styles.langRowLast}>
+                <View style={styles.langLeft}>
+                  <Text style={styles.langName}>English</Text>
+                  <Text style={styles.langLevel}>Intermediate</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  {[1,2,3,4,5].map(i => (
+                    <View key={i} style={i <= 2 ? styles.langDotFilled : styles.langDotEmpty} />
+                  ))}
+                </View>
+              </View>
+
+              {/* 2. PROJECTS */}
+              <SectionTitle mt={8}>Projects</SectionTitle>
+              {displayedProjects.map((proj, idx) => (
+                <View key={proj.id} style={idx === displayedProjects.length - 1 ? styles.projItemLast : styles.projItem}>
+                  <Text style={styles.projTitle}>{proj.title}</Text>
+                  {proj.link && proj.link !== '#' ? (
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 3 }}>
+                      <LinkIcon />
+                      <Link src={proj.link} style={[styles.projLink, { marginBottom: 0, marginLeft: 3 }]}>
+                        {proj.link}
+                      </Link>
+                    </View>
+                  ) : (
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 3 }}>
+                      <LinkIcon />
+                      <Link
+                        src={`https://krasimir-mihaylov-portfolio.vercel.app/projects/${proj.id}`}
+                        style={[styles.projLink, { marginBottom: 0, marginLeft: 3 }]}
+                      >
+                        {`krasimir-mihaylov-portfolio.vercel.app/projects/${proj.id}`}
+                      </Link>
+                    </View>
+                  )}
+                  <Text style={styles.projDesc}>{proj.description}</Text>
+                  {proj.technologies.length > 0 && (
+                    <View style={styles.techContainer}>
+                      {proj.technologies.map((tech, i) => (
+                        <Text key={i} style={styles.techBadge}>{tech}</Text>
+                      ))}
+                    </View>
+                  )}
+                </View>
+              ))}
+
+              {/* 3. EDUCATION */}
+              <SectionTitle mt={8}>Education</SectionTitle>
               {education.map((edu) => (
                 <View key={edu.id} style={styles.eduItem}>
                   <Text style={styles.eduDegree}>{edu.degree}</Text>
@@ -578,44 +768,45 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
                 </View>
               ))}
 
-              {skills && (
-                <>
-                  <SectionTitle mt={12}>Technical Skills</SectionTitle>
-                  {(Object.keys(skillCategoryLabels) as Array<keyof ProgrammingSkills>).map((key) => {
-                    const items = skills[key];
-                    if (!items || items.length === 0) return null;
-                    return (
-                      <View key={key}>
-                        <Text style={styles.skillCategory}>{skillCategoryLabels[key]}</Text>
-                        <Text style={styles.skillItem}>{items.join(', ')}</Text>
-                      </View>
-                    );
-                  })}
-                </>
-              )}
-
-              {!skills && selectedPosition !== 'software-engineer' && (
-                <>
-                  <SectionTitle mt={12}>Key Skills</SectionTitle>
-                  {selectedPosition === 'merchant' && (
-                    <>
-                      <Text style={styles.skillCategory}>Sales</Text>
-                      <Text style={styles.skillItem}>B2B & B2C Client Management, Sales Process Development, Deal Closing</Text>
-                    </>
-                  )}
-                  {selectedPosition === 'business-consultant' && (
-                    <>
-                      <Text style={styles.skillCategory}>Consulting</Text>
-                      <Text style={styles.skillItem}>Process Optimization, Business Model Creation, Pricing Systems</Text>
-                    </>
-                  )}
-                </>
-              )}
             </View>
 
           </View>
         </View>
       </Page>
+
+      {/* ── PAGE 2: Technical Skills ── */}
+      {skills && (
+        <Page size="A4" style={styles.page}>
+          <View style={styles.bgArc1} />
+          <View style={styles.bgArc2} />
+          <View style={styles.bgArc3} />
+          <View style={styles.bgArc4} />
+          <View style={styles.bgArc5} />
+          <View style={styles.bgAccentTop} />
+          <View style={styles.bgAccentSide} />
+
+          <View style={styles.pageContent}>
+            <SectionTitle>Technical Skills</SectionTitle>
+
+            {skillPairs.map((pair, rowIdx) => (
+              <View key={rowIdx} style={styles.skillsRow}>
+                {pair.map((key) => (
+                  <View key={key} style={styles.skillBox}>
+                    <Text style={styles.skillBoxTitle}>{skillCategoryLabels[key]}</Text>
+                    <View style={styles.skillChipsContainer}>
+                      {(skills[key] as string[]).map((item: string, i: number) => (
+                        <Text key={i} style={styles.skillChip}>{item}</Text>
+                      ))}
+                    </View>
+                  </View>
+                ))}
+                {pair.length === 1 && <View style={{ flex: 1 }} />}
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
     </Document>
   );
 }

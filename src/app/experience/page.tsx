@@ -30,7 +30,7 @@ export default function ExperiencePage() {
   const [isGenerating, setIsGenerating] = useState(false);
 
   const { experiences, education, skills, loading } = useCVData(locale);
-  const { experiences: experiencesEN, education: educationEN } = useCVData('en');
+  const { experiences: experiencesEN, education: educationEN, projects } = useCVData('en');
 
   const handleDownloadCV = async (position: 'software-engineer' | 'merchant' | 'business-consultant') => {
     try {
@@ -51,7 +51,7 @@ export default function ExperiencePage() {
         // fallback to path if fetch fails
       }
 
-      const doc = <CVDocument selectedPosition={position} experiences={experiencesEN} education={educationEN} skills={skills} profileImage={profileImageData ?? CV_PROFILE_IMAGE} />;
+      const doc = <CVDocument selectedPosition={position} experiences={experiencesEN} education={educationEN} skills={skills} projects={projects} profileImage={profileImageData ?? CV_PROFILE_IMAGE} />;
       const blob = await pdf(doc).toBlob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');

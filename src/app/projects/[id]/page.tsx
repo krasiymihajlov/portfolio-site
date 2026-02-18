@@ -1,98 +1,31 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@/presentation/contexts/ThemeContext';
+import { useProjectData } from '@/presentation/hooks/useProjectData';
 import styles from './ProjectDetail.module.css';
-
-// Project data - TODO: Move to shared data file
-const projects = [
-  {
-    id: 1,
-    title: 'Българска Образователна Кибернетика',
-    description: 'BOK Academy е цялостна образователна платформа в сферата на предприемачеството, предназначена за управление на онлайн курсове, предоставяне на съдържание и записване на клиенти. Също така разполага с вътрешен административен панел, за създаване и управление, разплащателна система и система за SEO Оптимизация',
-    fullDescription: `
-BOK Academy v2.0 е цялостна образователна платформа разработена специално за предприемачи и малки бизнеси, които искат да развият своите умения и знания в областта на бизнеса.
-
-## Основни функционалности:
-
-### Образователна платформа
-- Управление на онлайн курсове с видео материали
-- Интерактивни тестове и задачи
-- Прогрес tracking за всеки студент
-- Сертификати при завършване на курсове
-
-### Административен панел
-- Създаване и редактиране на курсове
-- Управление на потребители и права
-- Статистики и аналитика
-- Управление на плащания
-
-### Разплащателна система
-- Интеграция със Stripe, Borica, Epay 
-- Различни планове и пакети
-- Автоматични фактури
-- Recurring payments
-
-### SEO оптимизация
-- Автоматично генериране на meta tags
-- Sitemap генерация
-- Schema markup
-- Open Graph integration
-
-Платформата е изградена с модерни технологии и предлага отлично потребителско изживяване на всички устройства.
-    `,
-    tags: ['Web Application'],
-    technologies: ['Node.js 18+', '.NET 8.0 SDK', 'TypeScript', 'MySQL 8.0+', 'Tailwind CSS', 'NGINX'],
-    image: '/images/projects/logo-bok-skok.jpg',
-    screenshots: [
-      "/images/projects/screenshots/bok-login.png", 
-      "/images/projects/screenshots/bok-courses.jpg", 
-      "/images/projects/screenshots/admin-bok.png"
-    ],
-    link: 'https://bok.bg/',
-  },
-  {
-    id: 2,
-    title: 'Автоматизиран генератор за оферти',
-    description: 'Placeholder description for automated quote generator',
-    fullDescription: 'Детайлно описание на автоматизиран генератор за оферти...',
-    tags: ['Web Application'],
-    technologies: [],
-    image: '/images/projects/offer-logo-bok.jpg',
-    screenshots: [
-      "/images/projects/screenshots/bok-offer.jpg",
-      "/images/projects/screenshots/bok-offer.png"
-    ],
-    link: '#',
-  },
-  {
-    id: 3,
-    title: 'Генератор на график за медицински сестри',
-    description: 'Placeholder description for nurse schedule generator',
-    fullDescription: 'Детайлно описание на генератор на график за медицински сестри...',
-    tags: ['Web Application'],
-    technologies: [],
-    image: '/images/projects/logo-maichin-dom.jpg',
-    screenshots: [
-      "/images/projects/screenshots/Nastroiki_med_sestri.png",
-      "/images/projects/screenshots/Ekip_plan_otpuski.png",
-      "/images/projects/screenshots/grafik-med-sestri.png"
-    ],
-    link: '#',
-  },
-];
 
 export default function ProjectDetailPage() {
   const params = useParams();
   const router = useRouter();
   const { isDark } = useTheme();
-  const projectId = parseInt(params.id as string);
+  const projectId = params.id as string;
   const [hoveredScreenshot, setHoveredScreenshot] = useState<string | null>(null);
+  const { projects, loading } = useProjectData('bg');
 
   const project = projects.find(p => p.id === projectId);
+
+  if (loading) {
+    return (
+      <div className={`${styles.container} ${isDark ? styles.dark : ''}`}>
+        <div className={styles.notFound}>
+          <h1>Зареждане...</h1>
+        </div>
+      </div>
+    );
+  }
 
   if (!project) {
     return (

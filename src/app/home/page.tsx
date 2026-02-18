@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useTheme } from '@/presentation/contexts/ThemeContext';
 import { ProjectCard } from '@/presentation/components/sections';
 import { PROFILE_IMAGE } from '@/data/siteConfig';
+import { useProjectData } from '@/presentation/hooks/useProjectData';
 import styles from './HomePage.module.css';
 
 // Profile data constants
@@ -44,39 +45,9 @@ const businessInsuranceSkills = [
   { id: 'investment', name: 'Investment insurance', icon: 'trending-up', color: '#10b981' },
 ];
 
-// Updated projects data
-const projects = [
-  {
-    id: 1,
-    title: 'Българска Образователна Кибернетика',
-    description: 'BOK Academy v2.0 е цялостна образователна платформа в сферата на предприемачеството, предназначена за управление на онлайн курсове, предоставяне на съдържание и записване на клиенти. Също така разполага с вътрешен административен панел, за създаване и управление, разплащателна система и система за SEO Оптимизация',
-    tags: ['Web Application'],
-    technologies: ['Node.js 18+', '.NET 8.0 SDK', 'TypeScript', 'MySQL 8.0+', 'Tailwind CSS', 'NGINX'],
-    image: '/images/projects/logo-bok-skok.jpg',
-    link: 'https://bok.bg/',
-  },
-  {
-    id: 2,
-    title: 'Автоматизиран генератор за оферти',
-    description: '',
-    tags: ['Web Application'],
-    technologies: ["Google Apps Script", "JavaScript", "Google Sheets"],
-    image: '/images/projects/offer-logo-bok.jpg',
-    link: '#',
-  },
-  {
-    id: 3,
-    title: 'Генератор на график за медицински сестри',
-    description: 'Placeholder description for nurse schedule generator',
-    tags: ['Web Application'],
-    technologies: ["Google Apps Script", "JavaScript", "Google Sheets"],
-    image: '/images/projects/logo-maichin-dom.jpg',
-    link: '#',
-  },
-];
-
 export default function HomePage() {
   const { isDark } = useTheme();
+  const { projects } = useProjectData('bg');
 
   return (
     <div className={`${styles.pageContainer} ${isDark ? styles.dark : ''}`}>

@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex justify-center gap-6">
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/krasimir-mihailov-301429139/"
+              href="https://www.linkedin.com/in/krasimir-mihaylov-301429139/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-colors"

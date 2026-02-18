@@ -282,6 +282,190 @@ const skills = {
   integrations: ['Firebase', 'SendGrid', 'Gmail', 'EmailJS'],
 };
 
+const projectsBG = [
+  {
+    id: '1',
+    order: 1,
+    title: 'Българска Образователна Кибернетика',
+    description: 'BOK Academy е цялостна образователна платформа в сферата на предприемачеството, предназначена за управление на онлайн курсове, предоставяне на съдържание и записване на клиенти. Разполага с вътрешен административен панел, разплащателна система и SEO оптимизация.',
+    fullDescription: `BOK Academy v2.0 е цялостна образователна платформа разработена специално за предприемачи и малки бизнеси, които искат да развият своите умения и знания в областта на бизнеса.
+
+## Основни функционалности:
+
+### Образователна платформа
+- Управление на онлайн курсове с видео материали
+- Интерактивни тестове и задачи
+- Прогрес tracking за всеки студент
+- Сертификати при завършване на курсове
+
+### Административен панел
+- Създаване и редактиране на курсове
+- Управление на потребители и права
+- Статистики и аналитика
+- Управление на плащания
+
+### Разплащателна система
+- Интеграция със Stripe, Borica, Epay
+- Различни планове и пакети
+- Автоматични фактури
+- Recurring payments
+
+### SEO оптимизация
+- Автоматично генериране на meta tags
+- Sitemap генерация
+- Schema markup
+- Open Graph integration
+
+Платформата е изградена с модерни технологии и предлага отлично потребителско изживяване на всички устройства.`,
+    tags: ['Web Application'],
+    technologies: ['Node.js 18+', '.NET 8.0 SDK', 'TypeScript', 'MySQL 8.0+', 'Tailwind CSS', 'NGINX'],
+    image: '/images/projects/logo-bok-skok.jpg',
+    screenshots: [
+      '/images/projects/screenshots/bok-login.png',
+      '/images/projects/screenshots/bok-courses.jpg',
+      '/images/projects/screenshots/admin-bok.png',
+    ],
+    link: 'https://bok.bg/',
+  },
+  {
+    id: '2',
+    order: 2,
+    title: 'Автоматизиран генератор за оферти',
+    description: 'Инструмент за автоматично генериране на персонализирани оферти. Системата позволява бързо създаване на оферти с динамично съдържание, автоматично изчисляване на цени и експорт в PDF формат.',
+    fullDescription: `Автоматизиран генератор за оферти създаден за нуждите на BOK Academy.
+
+## Функционалности:
+- Динамично генериране на оферти по шаблон
+- Автоматично изчисляване на цени и отстъпки
+- Персонализация на съдържанието
+- Експорт в PDF формат
+- Интеграция с Google Sheets за съхранение`,
+    tags: ['Web Application'],
+    technologies: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
+    image: '/images/projects/offer-logo-bok.jpg',
+    screenshots: [
+      '/images/projects/screenshots/bok-offer.jpg',
+      '/images/projects/screenshots/bok-offer.png',
+    ],
+    link: '#',
+  },
+  {
+    id: '3',
+    order: 3,
+    title: 'Генератор на график за медицински сестри',
+    description: 'Система за автоматично генериране на работни графици за медицински персонал. Отчита почивки, отпуски, нощни смени и изисквания за покритие на отделенията.',
+    fullDescription: `Генератор на график за медицински сестри разработен за нуждите на болнично заведение.
+
+## Функционалности:
+- Автоматично разпределение на смени
+- Управление на отпуски и почивни дни
+- Настройки за брой персонал на смяна
+- Спазване на трудови норми
+- Експорт на готовия график`,
+    tags: ['Web Application'],
+    technologies: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
+    image: '/images/projects/logo-maichin-dom.jpg',
+    screenshots: [
+      '/images/projects/screenshots/Nastroiki_med_sestri.png',
+      '/images/projects/screenshots/Ekip_plan_otpuski.png',
+      '/images/projects/screenshots/grafik-med-sestri.png',
+    ],
+    link: '#',
+  },
+];
+
+const projectsEN = [
+  {
+    id: '1',
+    order: 1,
+    title: 'Bulgarian Educational Cybernetics',
+    description: 'BOK Academy is a comprehensive educational platform for entrepreneurship, designed for online course management, content delivery and student enrollment. Features an admin panel, payment system and SEO optimization.',
+    fullDescription: `BOK Academy v2.0 is a comprehensive educational platform built for entrepreneurs and small businesses looking to develop their business skills and knowledge.
+
+## Key Features:
+
+### Educational Platform
+- Online course management with video content
+- Interactive tests and assignments
+- Student progress tracking
+- Certificates upon course completion
+
+### Admin Panel
+- Course creation and editing
+- User and permissions management
+- Statistics and analytics
+- Payment management
+
+### Payment System
+- Stripe, Borica, Epay integration
+- Multiple plans and packages
+- Automatic invoicing
+- Recurring payments
+
+### SEO Optimization
+- Automatic meta tag generation
+- Sitemap generation
+- Schema markup
+- Open Graph integration
+
+The platform is built with modern technologies and delivers an excellent user experience across all devices.`,
+    tags: ['Web Application'],
+    technologies: ['Node.js 18+', '.NET 8.0 SDK', 'TypeScript', 'MySQL 8.0+', 'Tailwind CSS', 'NGINX'],
+    image: '/images/projects/logo-bok-skok.jpg',
+    screenshots: [
+      '/images/projects/screenshots/bok-login.png',
+      '/images/projects/screenshots/bok-courses.jpg',
+      '/images/projects/screenshots/admin-bok.png',
+    ],
+    link: 'https://bok.bg/',
+  },
+  {
+    id: '2',
+    order: 2,
+    title: 'Automated Quote Generator',
+    description: 'Tool for automatic generation of personalized quotes. Allows quick creation of quotes with dynamic content, automatic price calculation and PDF export.',
+    fullDescription: `Automated quote generator built for BOK Academy.
+
+## Features:
+- Dynamic quote generation from templates
+- Automatic price and discount calculation
+- Content personalization
+- PDF export
+- Google Sheets integration for storage`,
+    tags: ['Web Application'],
+    technologies: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
+    image: '/images/projects/offer-logo-bok.jpg',
+    screenshots: [
+      '/images/projects/screenshots/bok-offer.jpg',
+      '/images/projects/screenshots/bok-offer.png',
+    ],
+    link: '#',
+  },
+  {
+    id: '3',
+    order: 3,
+    title: 'Medical Staff Schedule Generator',
+    description: 'System for automatic generation of work schedules for medical personnel. Tracks days off, vacations, night shifts and ward coverage requirements.',
+    fullDescription: `Medical staff schedule generator built for a hospital facility.
+
+## Features:
+- Automatic shift assignment
+- Vacation and day-off management
+- Staff count settings per shift
+- Labor law compliance
+- Schedule export`,
+    tags: ['Web Application'],
+    technologies: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
+    image: '/images/projects/logo-maichin-dom.jpg',
+    screenshots: [
+      '/images/projects/screenshots/Nastroiki_med_sestri.png',
+      '/images/projects/screenshots/Ekip_plan_otpuski.png',
+      '/images/projects/screenshots/grafik-med-sestri.png',
+    ],
+    link: '#',
+  },
+];
+
 // ──────────────────────────────────────────────
 // SEED FUNCTIONS
 // ──────────────────────────────────────────────
@@ -303,6 +487,8 @@ async function main() {
   await seedCollection('experiences_bg', experiencesBG);
   await seedCollection('education_en', educationEN);
   await seedCollection('education_bg', educationBG);
+  await seedCollection('projects_bg', projectsBG);
+  await seedCollection('projects_en', projectsEN);
 
   console.log('\nSeeding skills/programming...');
   await setDoc(doc(db, 'skills', 'programming'), skills);

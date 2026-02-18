@@ -20,7 +20,7 @@ export default function ContactPage() {
           </h2>
           <div className={styles.socialLinks}>
             <a
-              href="https://www.linkedin.com/in/krasimir-mihailov-301429139/"
+              href="https://www.linkedin.com/in/krasimir-mihaylov-301429139/"
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles.socialLink} ${styles.linkedin} ${isDark ? styles.dark : ''}`}

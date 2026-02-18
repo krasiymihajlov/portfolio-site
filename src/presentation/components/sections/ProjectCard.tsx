@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 interface ProjectCardProps {
-  id: number;
+  id: string | number;
   title: string;
   description: string;
   tags?: string[];

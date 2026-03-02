@@ -6,7 +6,8 @@
     "dev": "cross-env NODE_OPTIONS=--max-old-space-size=4096 next dev",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed:articles": "node scripts/seed-articles.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

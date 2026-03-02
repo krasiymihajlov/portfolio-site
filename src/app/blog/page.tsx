@@ -12,7 +12,7 @@ export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const isDark = theme === 'dark';
 
-  const categories = ['all', 'Технологии', 'Кариера', 'Съвети'];
+  const categories = ['all', 'Бизнес организация', 'Технологии', 'Кариера', 'Съвети'];
 
   const filteredArticles =
     selectedCategory === 'all'

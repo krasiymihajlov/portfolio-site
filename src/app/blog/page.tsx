@@ -35,6 +35,16 @@ export default function BlogPage() {
     );
   }
 
+  if (error) {
+    return (
+      <div className={styles.loading}>
+        <div className={`${styles.loadingText} ${isDark ? styles.dark : ''}`}>
+          Грешка при зареждане: {error.message}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`${styles.pageContainer} ${isDark ? styles.dark : ''}`}>
       <div className={styles.container}>

@@ -118,6 +118,43 @@ export function Component() {
    - Domain layer: Entities and interfaces
    - Infrastructure layer: External services
 
+## 🎨 Design System — Color Palette
+
+Използвай тези цветове при всички нови страници и компоненти, за да запазиш визуална консистентност с останалите секции (напр. "За Мен" на Home страницата).
+
+### Фонове на страниците
+| Режим | Цвят |
+|-------|------|
+| Light | `#f3f4f6` (основен) или `#f9fafb` (по-светъл вариант) |
+| Dark  | `#111827` |
+
+### Карти / Panels
+| Режим | Background | Border |
+|-------|-----------|--------|
+| Light | `#ffffff` | `#e5e7eb` |
+| Dark  | `#1f2937` | `#374151` |
+
+### Текст
+| Употреба | Light | Dark |
+|----------|-------|------|
+| Заглавия | `#111827` | `#f9fafb` |
+| Основен текст | `#4b5563` | `#d1d5db` |
+| Вторичен / метаданни | `#6b7280` | `#9ca3af` |
+
+### Акцентни цветове
+| Употреба | Цвят |
+|----------|------|
+| Основен (бутони, линкове) | `#2563eb` |
+| Hover | `#1d4ed8` |
+| Dark mode акцент | `#3b82f6` |
+| Dark mode hover | `#2563eb` |
+
+### Placeholder градиенти (когато няма изображение)
+- Light: `linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%)`
+- Dark: `linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%)`
+
+---
+
 ## 📝 Notes
 
 - Site repositioned from developer portfolio to business-focused platform

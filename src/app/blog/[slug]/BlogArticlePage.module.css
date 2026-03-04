@@ -1,8 +1,9 @@
 /* Blog Article Page Styles */
 
 .pageContainer {
-  background-color: white;
+  background-color: #f3f4f6;
   padding: 6rem 0;
+  min-height: 100vh;
   transition: background-color 0.3s;
 }
 
@@ -69,21 +70,36 @@
   color: #60a5fa;
 }
 
-.notFoundLink.dark:hover {
-  color: #3b82f6;
-}
-
 /* Article Container */
 .articleContainer {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: 0 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  padding: 2.5rem 3rem;
 }
 
-@media (min-width: 1024px) {
+.pageContainer.dark .articleContainer {
+  background-color: #1f2937;
+}
+
+@media (max-width: 640px) {
   .articleContainer {
-    padding: 0 2rem;
+    padding: 1.5rem;
+    border-radius: 0;
   }
+}
+
+/* Cover Image */
+.articleCoverImage {
+  width: 100%;
+  max-height: 22rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 /* Back Link */
@@ -107,18 +123,22 @@
   color: #60a5fa;
 }
 
-.backLink.dark:hover {
-  color: #3b82f6;
-}
-
 /* Article Header */
 .articleHeader {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 2rem;
+}
+
+.pageContainer.dark .articleHeader {
+  border-bottom-color: #374151;
 }
 
 .articleMeta {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   font-size: 0.875rem;
   color: #6b7280;
@@ -144,74 +164,65 @@
 }
 
 .categoryBadge.dark {
-  background-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(59, 130, 246, 0.2);
   color: #93c5fd;
   border-color: rgba(59, 130, 246, 0.2);
 }
 
+/* Title — центрирано */
 .articleTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.25;
   letter-spacing: -0.025em;
   color: #111827;
-  margin-bottom: 1.5rem;
+  margin: 0.75rem 0 1.25rem;
+  text-align: center;
   transition: color 0.3s;
 }
 
 .articleTitle.dark {
-  color: white;
+  color: #f9fafb;
 }
 
 @media (min-width: 640px) {
   .articleTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
-.articleExcerpt {
-  font-size: 1.25rem;
-  line-height: 2rem;
-  color: #4b5563;
-  transition: color 0.3s;
-}
-
-.articleExcerpt.dark {
-  color: #9ca3af;
-}
-
-/* Tags Container */
+/* Tags */
 .tagsContainer {
-  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .tag {
   display: inline-flex;
   align-items: center;
   border-radius: 0.375rem;
-  background-color: #f9fafb;
+  background-color: #f3f4f6;
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #4b5563;
   transition: all 0.3s;
 }
 
 .tag.dark {
-  background-color: #1f2937;
+  background-color: #374151;
   color: #9ca3af;
 }
 
-/* Article Content */
+/* ─── Article Content (Markdown rendered) ─── */
+
 .articleContent {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
   color: #374151;
-  max-width: 65ch;
-  white-space: pre-wrap;
   transition: color 0.3s;
 }
 
@@ -219,109 +230,135 @@
   color: #d1d5db;
 }
 
-/* Prose Styles for Content */
-.prose {
-  max-width: 65ch;
-}
-
-.prose.dark {
-  color: #d1d5db;
-}
-
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
+/* Headings */
+.articleContent :global(h1),
+.articleContent :global(h2),
+.articleContent :global(h3),
+.articleContent :global(h4) {
+  font-weight: 800;
+  line-height: 1.3;
   color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+}
+
+.articleContent.dark :global(h1),
+.articleContent.dark :global(h2),
+.articleContent.dark :global(h3),
+.articleContent.dark :global(h4) {
+  color: #f9fafb;
+}
+
+.articleContent :global(h1) { font-size: 2rem; }
+.articleContent :global(h2) { font-size: 1.625rem; }
+.articleContent :global(h3) { font-size: 1.3rem; }
+.articleContent :global(h4) { font-size: 1.125rem; }
+
+/* Paragraphs */
+.articleContent :global(p) {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+/* Bold */
+.articleContent :global(strong) {
   font-weight: 700;
-  margin-top: 2rem;
+  color: #111827;
+}
+
+.articleContent.dark :global(strong) {
+  color: #f3f4f6;
+}
+
+/* Lists */
+.articleContent :global(ul),
+.articleContent :global(ol) {
+  margin-top: 1rem;
   margin-bottom: 1rem;
+  padding-left: 1.5rem;
 }
 
-.prose.dark h1,
-.prose.dark h2,
-.prose.dark h3,
-.prose.dark h4,
-.prose.dark h5,
-.prose.dark h6 {
-  color: white;
+.articleContent :global(ul) {
+  list-style-type: disc;
 }
 
-.prose h1 {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.articleContent :global(ol) {
+  list-style-type: decimal;
 }
 
-.prose h2 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.articleContent :global(li) {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
-.prose h3 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+/* Blockquote — за > цитати */
+.articleContent :global(blockquote) {
+  border-left: 4px solid #2563eb;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background-color: #eff6ff;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: normal;
+  color: #1e40af;
 }
 
-.prose p {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+.articleContent.dark :global(blockquote) {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left-color: #3b82f6;
+  color: #93c5fd;
 }
 
-.prose ul,
-.prose ol {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  padding-left: 1.625rem;
+/* Horizontal rule */
+.articleContent :global(hr) {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
 }
 
-.prose li {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.articleContent.dark :global(hr) {
+  border-top-color: #374151;
 }
 
-.prose code {
+/* Code */
+.articleContent :global(code) {
   background-color: #f3f4f6;
   color: #111827;
-  padding: 0.125rem 0.25rem;
+  padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
 }
 
-.prose.dark code {
-  background-color: #1f2937;
+.articleContent.dark :global(code) {
+  background-color: #374151;
   color: #e5e7eb;
 }
 
-.prose pre {
+.articleContent :global(pre) {
   background-color: #1f2937;
   color: #e5e7eb;
   overflow-x: auto;
-  padding: 1rem;
-  border-radius: 0.375rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
 }
 
-.prose.dark pre {
-  background-color: #111827;
+.articleContent :global(pre code) {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
 }
 
-.prose a {
+/* Links */
+.articleContent :global(a) {
   color: #2563eb;
   text-decoration: underline;
   font-weight: 500;
 }
 
-.prose a:hover {
+.articleContent :global(a:hover) {
   color: #1d4ed8;
 }
 
-.prose.dark a {
+.articleContent.dark :global(a) {
   color: #60a5fa;
-}
-
-.prose.dark a:hover {
-  color: #3b82f6;
 }

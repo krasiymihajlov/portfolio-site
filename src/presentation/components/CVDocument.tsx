@@ -713,11 +713,11 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
               <View style={styles.langRowLast}>
                 <View style={styles.langLeft}>
                   <Text style={styles.langName}>English</Text>
-                  <Text style={styles.langLevel}>Intermediate</Text>
+                  <Text style={styles.langLevel}>Upper-Intermediate</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                   {[1,2,3,4,5].map(i => (
-                    <View key={i} style={i <= 2 ? styles.langDotFilled : styles.langDotEmpty} />
+                    <View key={i} style={i <= 3 ? styles.langDotFilled : styles.langDotEmpty} />
                   ))}
                 </View>
               </View>

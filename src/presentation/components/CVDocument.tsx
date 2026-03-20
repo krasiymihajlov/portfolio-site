@@ -119,12 +119,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   profileImageWrapper: {
-    width: 96,
-    height: 96,
-    borderRadius: 48,
+    width: 102,
+    height: 102,
+    borderRadius: 51,
     borderWidth: 3,
     borderColor: PURPLE,
     borderStyle: 'solid',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  profileImageClip: {
+    width: 96,
+    height: 96,
+    borderRadius: 48,
     overflow: 'hidden',
   },
   profileImage: {
@@ -642,7 +649,9 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
 
             <View style={styles.headerPhoto}>
               <View style={styles.profileImageWrapper}>
-                <Image src={profileImageUrl} style={styles.profileImage} />
+                <View style={styles.profileImageClip}>
+                  <Image src={profileImageUrl} style={styles.profileImage} />
+                </View>
               </View>
             </View>
           </View>

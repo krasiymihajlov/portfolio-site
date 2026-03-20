@@ -1,5 +1,6 @@
 import { Document, Page, Text, View, StyleSheet, Link, Image, Svg, Path } from '@react-pdf/renderer';
 import { ProgrammingSkills, ProjectData } from '@/data/cvData';
+import { CV_PROFILE_IMAGE } from '@/data/siteConfig';
 
 const PURPLE = '#310063';
 const PURPLE_LIGHT = '#e8d0ff';
@@ -570,7 +571,7 @@ export function CVDocument({ selectedPosition, experiences, education, skills, p
   };
 
   const isMain = (category: string) => category === selectedPosition;
-  const profileImageUrl = profileImage ?? '/images/profile/k.mihaylov-logo.png';
+  const profileImageUrl = profileImage ?? CV_PROFILE_IMAGE;
   const mainExperiences = experiences.filter(e => isMain(e.category));
   const otherExperiences = experiences.filter(e => !isMain(e.category));
 

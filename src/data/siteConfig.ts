@@ -5,4 +5,4 @@
  */
 
 export const PROFILE_IMAGE = '/images/profile/k.mihaylov-logo.png';
-export const CV_PROFILE_IMAGE = '/images/profile/k.mihaylov-head.png';
+export const CV_PROFILE_IMAGE = '/images/profile/k.mihaylov-head-cv.jpg';
